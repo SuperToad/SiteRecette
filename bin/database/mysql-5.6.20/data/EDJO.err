@@ -1,0 +1,326 @@
+2015-11-19 12:43:06 4232 [Note] Plugin 'FEDERATED' is disabled.
+2015-11-19 12:43:12 4232 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2015-11-19 12:43:12 4232 [Note] InnoDB: The InnoDB memory heap is disabled
+2015-11-19 12:43:12 4232 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2015-11-19 12:43:12 4232 [Note] InnoDB: Memory barrier is not used
+2015-11-19 12:43:12 4232 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2015-11-19 12:43:12 4232 [Note] InnoDB: Not using CPU crc32 instructions
+2015-11-19 12:43:12 4232 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2015-11-19 12:43:12 4232 [Note] InnoDB: Completed initialization of buffer pool
+2015-11-19 12:43:13 4232 [Note] InnoDB: Highest supported file format is Barracuda.
+2015-11-19 12:43:14 4232 [Note] InnoDB: 128 rollback segment(s) are active.
+2015-11-19 12:43:14 4232 [Note] InnoDB: Waiting for purge to start
+2015-11-19 12:43:14 4232 [Note] InnoDB: 5.6.20 started; log sequence number 1600647
+2015-11-19 12:43:16 4232 [Note] Server hostname (bind-address): '*'; port: 3306
+2015-11-19 12:43:16 4232 [Note] IPv6 is available.
+2015-11-19 12:43:16 4232 [Note]   - '::' resolves to '::';
+2015-11-19 12:43:16 4232 [Note] Server socket created on IP: '::'.
+2015-11-19 12:43:22 4232 [Warning] InnoDB: Cannot open table mysql/slave_master_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-11-19 12:43:22 4232 [Warning] Info table is not ready to be used. Table 'mysql.slave_master_info' cannot be opened.
+2015-11-19 12:43:22 4232 [Warning] InnoDB: Cannot open table mysql/slave_worker_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-11-19 12:43:22 4232 [Warning] InnoDB: Cannot open table mysql/slave_relay_log_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-11-19 12:43:22 4232 [Warning] Info table is not ready to be used. Table 'mysql.slave_relay_log_info' cannot be opened.
+2015-11-19 12:43:25 4232 [Note] Event Scheduler: Loaded 0 events
+2015-11-19 12:43:25 4232 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: ready for connections.
+Version: '5.6.20-log'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2015-11-19 15:26:05 4232 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: Normal shutdown
+
+2015-11-19 15:26:05 4232 [Note] Giving 1 client threads a chance to die gracefully
+2015-11-19 15:26:05 4232 [Note] Event Scheduler: Purging the queue. 0 events
+2015-11-19 15:26:05 4232 [Note] Shutting down slave threads
+2015-11-19 15:26:05 4232 [Note] Forcefully disconnecting 0 remaining clients
+2015-11-19 15:26:05 4232 [Note] Binlog end
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'partition'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_METRICS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_CMP'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_LOCKS'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'INNODB_TRX'
+2015-11-19 15:26:08 4232 [Note] Shutting down plugin 'InnoDB'
+2015-11-19 15:26:08 4232 [Note] InnoDB: FTS optimize thread exiting.
+2015-11-19 15:26:08 4232 [Note] InnoDB: Starting shutdown...
+2015-11-19 15:26:10 4232 [Note] InnoDB: Shutdown completed; log sequence number 1600657
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'BLACKHOLE'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'ARCHIVE'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'MRG_MYISAM'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'MyISAM'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'MEMORY'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'CSV'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'sha256_password'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'mysql_old_password'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'mysql_native_password'
+2015-11-19 15:26:10 4232 [Note] Shutting down plugin 'binlog'
+2015-11-19 15:26:11 4232 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: Shutdown complete
+
+2015-12-01 09:14:21 3488 [Note] Plugin 'FEDERATED' is disabled.
+2015-12-01 09:14:22 3488 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2015-12-01 09:14:22 3488 [Note] InnoDB: The InnoDB memory heap is disabled
+2015-12-01 09:14:22 3488 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2015-12-01 09:14:22 3488 [Note] InnoDB: Memory barrier is not used
+2015-12-01 09:14:22 3488 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2015-12-01 09:14:22 3488 [Note] InnoDB: Not using CPU crc32 instructions
+2015-12-01 09:14:22 3488 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2015-12-01 09:14:22 3488 [Note] InnoDB: Completed initialization of buffer pool
+2015-12-01 09:14:23 3488 [Note] InnoDB: Highest supported file format is Barracuda.
+2015-12-01 09:14:24 3488 [Note] InnoDB: 128 rollback segment(s) are active.
+2015-12-01 09:14:24 3488 [Note] InnoDB: Waiting for purge to start
+2015-12-01 09:14:24 3488 [Note] InnoDB: 5.6.20 started; log sequence number 1600677
+2015-12-01 09:14:28 3488 [Note] Server hostname (bind-address): '*'; port: 3306
+2015-12-01 09:14:28 3488 [Note] IPv6 is available.
+2015-12-01 09:14:28 3488 [Note]   - '::' resolves to '::';
+2015-12-01 09:14:28 3488 [Note] Server socket created on IP: '::'.
+2015-12-01 09:14:35 3488 [Warning] InnoDB: Cannot open table mysql/slave_master_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-12-01 09:14:35 3488 [Warning] Info table is not ready to be used. Table 'mysql.slave_master_info' cannot be opened.
+2015-12-01 09:14:35 3488 [Warning] InnoDB: Cannot open table mysql/slave_worker_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-12-01 09:14:35 3488 [Warning] InnoDB: Cannot open table mysql/slave_relay_log_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-12-01 09:14:35 3488 [Warning] Info table is not ready to be used. Table 'mysql.slave_relay_log_info' cannot be opened.
+2015-12-01 09:14:38 3488 [Note] Event Scheduler: Loaded 0 events
+2015-12-01 09:14:38 3488 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: ready for connections.
+Version: '5.6.20-log'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2015-12-01 09:34:30 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:34:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:34:46 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:34:51 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:34:52 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:34:57 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:01 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:09 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:09 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:09 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."tj_cat_rct" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."#sql-da0_5" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:20 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_unite_uni" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:34 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:34 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:34 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."#sql-da0_5" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:34 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:34 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_commentaire_com" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."#sql-da0_5" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."tj_igd_rct_uni" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."#sql-da0_5" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:35 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_ingredient_igd" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."#sql-da0_5" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_recette_rct" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."#sql-da0_5" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:35:36 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:43 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:43 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_categorie_cat" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:36:43 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:43 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_commentaire_com" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:36:43 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:43 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_ingredient_igd" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:36:43 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:43 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_recette_rct" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:36:44 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:44 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_unite_uni" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:36:44 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:44 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."t_utilisateur_uti" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:36:44 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:44 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."tj_cat_rct" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:36:44 1294 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:36:44 1294 InnoDB: Error: Fetch of persistent statistics requested for table "recette"."tj_igd_rct_uni" but the required system tables mysql.innodb_table_stats and mysql.innodb_index_stats are not present or have unexpected structure. Using transient stats instead.
+2015-12-01 09:52:52 564 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:52:52 564 InnoDB: Recalculation of persistent statistics requested for table "recette"."t_categorie_cat" but the required persistent statistics storage is not present or is corrupted. Using transient stats instead.
+2015-12-01 09:57:38 564 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 09:57:38 564 InnoDB: Recalculation of persistent statistics requested for table "recette"."t_utilisateur_uti" but the required persistent statistics storage is not present or is corrupted. Using transient stats instead.
+2015-12-01 11:16:41 564 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 11:16:41 564 InnoDB: Recalculation of persistent statistics requested for table "recette"."t_recette_rct" but the required persistent statistics storage is not present or is corrupted. Using transient stats instead.
+2015-12-01 11:20:04 564 InnoDB: Error: Table "mysql"."innodb_table_stats" not found.
+2015-12-01 11:20:04 564 InnoDB: Recalculation of persistent statistics requested for table "recette"."tj_cat_rct" but the required persistent statistics storage is not present or is corrupted. Using transient stats instead.
+2015-12-01 11:52:41 3488 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: Normal shutdown
+
+2015-12-01 11:52:41 3488 [Note] Giving 0 client threads a chance to die gracefully
+2015-12-01 11:52:41 3488 [Note] Event Scheduler: Purging the queue. 0 events
+2015-12-01 11:52:41 3488 [Note] Shutting down slave threads
+2015-12-01 11:52:41 3488 [Note] Forcefully disconnecting 0 remaining clients
+2015-12-01 11:52:41 3488 [Note] Binlog end
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'partition'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_METRICS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_CMP'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_LOCKS'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'INNODB_TRX'
+2015-12-01 11:52:45 3488 [Note] Shutting down plugin 'InnoDB'
+2015-12-01 11:52:45 3488 [Note] InnoDB: FTS optimize thread exiting.
+2015-12-01 11:52:45 3488 [Note] InnoDB: Starting shutdown...
+2015-12-01 11:52:50 3488 [Note] InnoDB: Shutdown completed; log sequence number 1753590
+2015-12-01 11:52:50 3488 [Note] Shutting down plugin 'BLACKHOLE'
+2015-12-01 11:52:50 3488 [Note] Shutting down plugin 'ARCHIVE'
+2015-12-01 11:52:50 3488 [Note] Shutting down plugin 'MRG_MYISAM'
+2015-12-01 11:52:51 3488 [Note] Shutting down plugin 'MyISAM'
+2015-12-01 11:52:51 3488 [Note] Shutting down plugin 'MEMORY'
+2015-12-01 11:52:51 3488 [Note] Shutting down plugin 'CSV'
+2015-12-01 11:52:51 3488 [Note] Shutting down plugin 'sha256_password'
+2015-12-01 11:52:51 3488 [Note] Shutting down plugin 'mysql_old_password'
+2015-12-01 11:52:51 3488 [Note] Shutting down plugin 'mysql_native_password'
+2015-12-01 11:52:51 3488 [Note] Shutting down plugin 'binlog'
+2015-12-01 11:52:51 3488 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: Shutdown complete
+
+2015-12-07 07:15:11 4600 [Note] Plugin 'FEDERATED' is disabled.
+2015-12-07 07:15:14 4600 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2015-12-07 07:15:14 4600 [Note] InnoDB: The InnoDB memory heap is disabled
+2015-12-07 07:15:14 4600 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2015-12-07 07:15:14 4600 [Note] InnoDB: Memory barrier is not used
+2015-12-07 07:15:14 4600 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2015-12-07 07:15:14 4600 [Note] InnoDB: Not using CPU crc32 instructions
+2015-12-07 07:15:14 4600 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2015-12-07 07:15:14 4600 [Note] InnoDB: Completed initialization of buffer pool
+2015-12-07 07:15:17 4600 [Note] InnoDB: Highest supported file format is Barracuda.
+2015-12-07 07:15:28 4600 [Note] InnoDB: 128 rollback segment(s) are active.
+2015-12-07 07:15:28 4600 [Note] InnoDB: Waiting for purge to start
+2015-12-07 07:15:28 4600 [Note] InnoDB: 5.6.20 started; log sequence number 1753590
+2015-12-07 07:15:33 4600 [Note] Server hostname (bind-address): '*'; port: 3306
+2015-12-07 07:15:33 4600 [Note] IPv6 is available.
+2015-12-07 07:15:33 4600 [Note]   - '::' resolves to '::';
+2015-12-07 07:15:33 4600 [Note] Server socket created on IP: '::'.
+2015-12-07 07:15:35 4600 [Warning] InnoDB: Cannot open table mysql/slave_master_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-12-07 07:15:35 4600 [Warning] Info table is not ready to be used. Table 'mysql.slave_master_info' cannot be opened.
+2015-12-07 07:15:35 4600 [Warning] InnoDB: Cannot open table mysql/slave_worker_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-12-07 07:15:35 4600 [Warning] InnoDB: Cannot open table mysql/slave_relay_log_info from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2015-12-07 07:15:35 4600 [Warning] Info table is not ready to be used. Table 'mysql.slave_relay_log_info' cannot be opened.
+2015-12-07 07:15:40 4600 [Note] Event Scheduler: Loaded 0 events
+2015-12-07 07:15:40 4600 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: ready for connections.
+Version: '5.6.20-log'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2015-12-07 09:54:00 4600 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: Normal shutdown
+
+2015-12-07 09:54:00 4600 [Note] Giving 0 client threads a chance to die gracefully
+2015-12-07 09:54:00 4600 [Note] Event Scheduler: Purging the queue. 0 events
+2015-12-07 09:54:00 4600 [Note] Shutting down slave threads
+2015-12-07 09:54:00 4600 [Note] Forcefully disconnecting 0 remaining clients
+2015-12-07 09:54:00 4600 [Note] Binlog end
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'partition'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_METRICS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_CMP'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_LOCKS'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'INNODB_TRX'
+2015-12-07 09:54:06 4600 [Note] Shutting down plugin 'InnoDB'
+2015-12-07 09:54:06 4600 [Note] InnoDB: FTS optimize thread exiting.
+2015-12-07 09:54:06 4600 [Note] InnoDB: Starting shutdown...
+2015-12-07 09:54:11 4600 [Note] InnoDB: Shutdown completed; log sequence number 1753616
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'BLACKHOLE'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'ARCHIVE'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'MRG_MYISAM'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'MyISAM'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'MEMORY'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'CSV'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'sha256_password'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'mysql_old_password'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'mysql_native_password'
+2015-12-07 09:54:11 4600 [Note] Shutting down plugin 'binlog'
+2015-12-07 09:54:12 4600 [Note] G:\UwAmp\bin\database\mysql-5.6.20\bin\mysqld.exe: Shutdown complete
+

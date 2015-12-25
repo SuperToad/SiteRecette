@@ -1,0 +1,24 @@
+CREATE DATABASE `TP3` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+use `acces`;
+
+CREATE USER 'u_acces'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV';
+GRANT USAGE ON * . * TO 'u_acces'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+GRANT ALL PRIVILEGES ON `acces` . * TO 'u_acces'@'localhost';
+-- 
+-- --------------------------------------------------------
+
+-- 
+-- Structure de la table 'TP3_DATA'
+-- 
+-- Table des utilisateurs
+
+CREATE TABLE IF NOT EXISTS `TP3_DATA` (
+  TP3_NAME varchar(255)  PRIMARY KEY ,
+  TP3_MAIL varchar(255) NOT NULL,
+  TP3_PHONE varchar(20) default NULL,
+  TP3_COMPANY varchar(255) NOT NULL,
+  TP3_ADMIN bool NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
+insert into  TP3_DATA  values('Admin','super-toad@hotmail.fr',default,'CEO', 1)
