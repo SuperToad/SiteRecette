@@ -1,0 +1,16 @@
+SELECT RCT_ID,
+	   RCT_DATE,
+	   RCT_TITRE,
+	   RCT_DESCRIPTION,
+	   RCT_TEMPS_PREPARATION,
+	   RCT_TEMPS_CUISSON,
+	   RCT_TEMPS_REPOS,
+	   RCT_DIFFICULTE,
+	   RCT_COUT,
+	   RCT_STATUT,
+	   RCT_ILLUSTRATION,
+	   RCT_NBPERSONNE
+FROM t_recette_rct
+where RCT_ID IN (SELECT RCT_ID
+				from tj_cat_rct
+				where cat_id = 1)

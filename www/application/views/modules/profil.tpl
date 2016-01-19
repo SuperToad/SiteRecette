@@ -1,6 +1,7 @@
-{extends file = "../layout.tpl"}
-{include_php file = '../accueil.inc.php'}
+{extends '../layout.tpl'}
 
-{block name = "main"}
-	<p>Bonjour {$data.$user['prenom']} $data[$user]['nom'].</p>
+{block name = main}
+
+	<p>Compte de {$data['user'].nom} {$data['user'].prenom}</p>
+
 {/block}

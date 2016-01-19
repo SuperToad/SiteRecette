@@ -1,7 +1,15 @@
-{extends file = '../layout.tpl'}
-{include_php file = '../accueil.inc.php'}
+{extends '../layout.tpl'}
 
-{block name = "main"}
-	<p>Edito</p>
-	<p>Les valeurs du jour sont {$data.alea[0]}.</p>
+{block name = main}
+	<h2>Page d'acceuil</h2>
+	
+	<article>
+		<p>Bienvenue sur notre site!</p>
+		
+		<p>Les valeurs aléatoires du moment sont : </br>
+		{foreach $data['alea'] as $value}
+			{$value}</br>
+		{/foreach}
+		</p>
+	</article>
 {/block}

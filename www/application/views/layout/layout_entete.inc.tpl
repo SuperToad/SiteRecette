@@ -1,2 +1,4 @@
-<h1>Nom du site</h1>
-<p>Slogan</p>
+<h1>Site de partage de recettes</h1>
+<p>Finit la prise de tête lors de la préparation des plats !</p>
+
+{include '../nav/nav.inc.tpl'}

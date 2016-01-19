@@ -1,6 +1,9 @@
 <?php
-	$user = array (
-    'prenom' => 'Julien',
-    'nom' => 'DUFFAUT');
+
+	$nom = "DUFFAUT";
+	$prenom = "Julien";
+
+	$user = array( 'nom' => $nom, 'prenom' => $prenom);
 	$data['user'] = $user;
+
 ?>
