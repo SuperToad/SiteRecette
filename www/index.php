@@ -18,6 +18,8 @@
 	}
 	else{
 		include 'application/modules/accueil.inc.php';
+		if(isset($data))
+			$smarty->assign("data",$data);
 		$smarty->display('application/views/modules/accueil.tpl');
 	}
 	
