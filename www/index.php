@@ -1,5 +1,5 @@
 <?php
-	
+	session_start()
 	// Connection a phpMyAdmin : root, root
 	date_default_timezone_set('Europe/Paris');
 	
