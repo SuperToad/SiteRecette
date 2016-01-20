@@ -1,7 +1,7 @@
 {extends '../layout.tpl'}
 
 {block name = main}
-	<h2>Page d'acceuil</h2>
+	<h2>Page d'accueil</h2>
 	
 	<article>
 		<p>Bienvenue sur notre site!</p>

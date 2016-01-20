@@ -1,7 +1,6 @@
 <nav>
-	<ul>
-		<li><a href="index.php?page=">Accueil</a></li>
-		<li><a href="index.php?page=liste">Recettes</a></li>
-		<li><a href="index.php?page=connexion">Espace Perso</a></li>
-	</ul>
+	<a href="index.php?page=">Accueil</a>
+	<a href="index.php?page=liste">Les Recettes</a>
+	<a href="index.php?page=profil">Profil</a>
+	<a href="index.php?page=connexion">Se déconnecter</a>
 </nav>

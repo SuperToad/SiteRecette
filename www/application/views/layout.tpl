@@ -8,6 +8,7 @@
 		<meta http-equiv="content-type" 
 			content="text/html;charset=utf-8" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<link href="../asset/css/style.css" rel="stylesheet" type="text/css" /> 
 	</head>
 	
 	<body>

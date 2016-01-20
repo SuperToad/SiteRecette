@@ -2,6 +2,9 @@
 
 {block name = main}
 
-	<p>Compte de {$data['user'].nom} {$data['user'].prenom}</p>
+	<h2>Profil du membre</h2>
+	<article>
+		<p>Compte de {$data['user'].nom} {$data['user'].prenom}.</p>
+	</article>
 
 {/block}

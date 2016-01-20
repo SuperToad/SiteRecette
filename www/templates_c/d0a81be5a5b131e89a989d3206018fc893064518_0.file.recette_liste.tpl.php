@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-01-19 15:21:15
+<?php /* Smarty version 3.1.24, created on 2016-01-20 22:20:44
          compiled from "C:/Users/Gaspard/Documents/Devoirs/UwAmp/www/application/views/modules/recette_liste.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:8058569e465b771328_45776384%%*/
+/*%%SmartyHeaderCode:18091569ffa2cb80258_88767376%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'da80556857cd7261a53d0481d09bc7ff96082861' => 
     array (
       0 => 'C:/Users/Gaspard/Documents/Devoirs/UwAmp/www/application/views/layout.tpl',
-      1 => 1453208088,
+      1 => 1453324219,
       2 => 'file',
     ),
     '48d61acff765c009f9e317aba030877e50e57232' => 
@@ -25,16 +25,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '8058569e465b771328_45776384',
+  'nocache_hash' => '18091569ffa2cb80258_88767376',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_569e465b898e50_34815446',
+  'unifunc' => 'content_569ffa2ccd58c7_52078090',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_569e465b898e50_34815446')) {
-function content_569e465b898e50_34815446 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_569ffa2ccd58c7_52078090')) {
+function content_569ffa2ccd58c7_52078090 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '8058569e465b771328_45776384';
+$_smarty_tpl->properties['nocache_hash'] = '18091569ffa2cb80258_88767376';
 echo '<?xml version="1.0" encoding="utf-8"?>';?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml/DTD/xhtml11-strict.dtd">
@@ -45,6 +45,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 		<meta http-equiv="content-type" 
 			content="text/html;charset=utf-8" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<link href="../asset/css/style.css" rel="stylesheet" type="text/css" /> 
 	</head>
 	
 	<body>
@@ -55,7 +56,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 		</header>
 		<main>
 			<?php
-$_smarty_tpl->properties['nocache_hash'] = '8058569e465b771328_45776384';
+$_smarty_tpl->properties['nocache_hash'] = '18091569ffa2cb80258_88767376';
 ?>
 
 	<?php if (isset($_smarty_tpl->tpl_vars['data']->value['rct_req'])) {?>

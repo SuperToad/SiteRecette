@@ -1,0 +1,80 @@
+/*******************************\
+  Général
+
+  Couleurs du document :
+  - Bleu moyen: #004379;
+  - Bleu clair: #56c2df;
+  - Vert clair: #9d9d9c;
+  - Rouge foncé: #e50043;
+  - Gris foncé: #333333;
+  - Gris moyen: #666666;
+  - Gris clair: #cccccc;
+  - Gris très clair: #ebe9d5;
+  - Orange: #2eb5b2;
+  
+\*******************************/
+
+html, body {
+  background-color:#926239;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: black;
+  margin: 50;
+}
+
+
+header > h1
+{
+  display:block;
+  padding: 15px 20px;
+  margin: 2px 40px;
+  text-align: center;
+  background-color: #2b1d11;
+  color: white;
+}
+
+/*header
+{
+  background-color: brown;
+}*/
+
+nav > a
+{
+  margin: 5px 5px;
+  padding: 5px 20px;
+  background-color: #2b1d11;
+  color: white;
+}
+
+nav > a:hover
+{
+  background-color: #573a22;
+}
+
+main
+{
+  margin: 0px 10px;
+}
+
+article
+{
+  margin: 20px 5px;
+  padding: 10px 20px;
+  background-color: #573a22;
+}
+
+article > a
+{
+  color: #1d130b;
+}
+
+footer
+{
+  display:block;
+  padding: 5px 20px;
+  margin: 2px 10px;
+  margin-top: 10px;
+  background-color: #2b1d11;
+  color: white;
+}
