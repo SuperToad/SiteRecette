@@ -1,28 +1,31 @@
-if(isset($_POST['delete_profil'])){
- 		//supprimer les commentaires de chaque recette de l'utilisateur
- 		$PDO_BDD->exec("DELETE FROM t_commentaire_com WHERE RCT_ID IN
- 							(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
- 		//supprime dans la table de liaison des recettes et categories
- 		$PDO_BDD->exec("DELETE FROM tj_cat_rct WHERE RCT_ID IN
- 				(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
- 		//supprime les recettes de l'utilisateur
- 		$PDO_BDD->exec("DELETE FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id']);
- 		//supprime le dossier
- 		$folder="./media/".$_SESSION['login']."/";
- 		$files = scandir($folder);
- 		foreach($files as $file)
- 			unlink($folder.$file);
-         rmdir("./media/".$_SESSION['login']."/");
-         //mettre a null le UTI_ID dans la table de commentaires
-         $PDO_BDD->exec("UPDATE t_commentaire_com SET UTI_ID = NULL WHERE UTI_ID = ".$_SESSION['id']);
- 		//supprimer l'utilisateur
-         $PDO_BDD->exec("DELETE FROM t_utilisateur_uti WHERE UTI_ID = ".$_SESSION['id']);
- 		//commentaires anonymes
- 		//fermer la session en même temps
- 		session_destroy();
- 		session_start();
- 		header('location: index.php?page=connexion');
- 	}
+<?php
+
+if(isset($_POST['delete_profil']))
+{
+	//supprimer les commentaires de chaque recette de l'utilisateur
+	$PDO_BDD->exec("DELETE FROM t_commentaire_com WHERE RCT_ID IN
+						(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
+	//supprime dans la table de liaison des recettes et categories
+	$PDO_BDD->exec("DELETE FROM tj_cat_rct WHERE RCT_ID IN
+			(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
+	//supprime les recettes de l'utilisateur
+	$PDO_BDD->exec("DELETE FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id']);
+	//supprime le dossier
+	$folder="./media/".$_SESSION['login']."/";
+	$files = scandir($folder);
+	foreach($files as $file)
+		unlink($folder.$file);
+	 rmdir("./media/".$_SESSION['login']."/");
+	 //mettre a null le UTI_ID dans la table de commentaires
+	 $PDO_BDD->exec("UPDATE t_commentaire_com SET UTI_ID = NULL WHERE UTI_ID = ".$_SESSION['id']);
+	//supprimer l'utilisateur
+	 $PDO_BDD->exec("DELETE FROM t_utilisateur_uti WHERE UTI_ID = ".$_SESSION['id']);
+	//commentaires anonymes
+	//fermer la session en même temps
+	session_destroy();
+	session_start();
+	header('location: index.php?page=connexion');
+}
  	if(isset($_POST['modif_profil'])) $page = 2;
  	else if(isset($_POST['new_recette'])) $page = 3;
  	else if(isset($_POST['modif_rct'])){
@@ -33,10 +36,13 @@ if(isset($_POST['delete_profil'])){
  	}
  	else $page = 1;
  		
- 	if(isset($_POST['send'])){
- 		if($_POST['mdp'] == $_POST['sec_mdp']){
- 			if($_POST['mdp'] != null){
- 				$destination = "./media/".$_SESSION['login'].'/'; // dossier où sera déplacé le fichier
+ 	if(isset($_POST['send']))
+	{
+ 		if($_POST['mdp'] == $_POST['sec_mdp'])
+		{
+ 			if($_POST['mdp'] != null)
+			{
+ 				$destination = "./media/".$_SESSION['login'].'/';
  				$fichier = $_FILES['new_avatar']['tmp_name'];
  				$image = true;
  				if( !is_uploaded_file($fichier))
@@ -62,7 +68,8 @@ if(isset($_POST['delete_profil'])){
  						UTI_PASS = '".addslashes($_POST['mdp'])."'
  					WHERE UTI_ID = '".$_SESSION['id']."'");
  			}
- 			else{
+ 			else
+			{
  				$destination = "./media/".$_SESSION['login'].'/';
  				$fichier = $_FILES['new_avatar']['tmp_name'];
  				$image = true;
@@ -187,4 +194,4 @@ if(isset($_POST['delete_profil'])){
  											FROM t_categorie_cat")->fetchAll(PDO::FETCH_ASSOC);
  	$data['page_profil'] = $page;
  	
- ?>
+?>
