@@ -1,191 +1,186 @@
-<?php
-	if(isset($_POST['delete_profil'])){
-		//supprimer les commentaires de chaque recette de l'utilisateur
-		$PDO_BDD->exec("DELETE FROM t_commentaire_com WHERE RCT_ID IN
-							(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
-		//supprime dans la table de liaison des recettes et categories
-		$PDO_BDD->exec("DELETE FROM tj_cat_rct WHERE RCT_ID IN
-				(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
-		//supprime les recettes de l'utilisateur
-		$PDO_BDD->exec("DELETE FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id']);
-		//supprime le dossier
-		$folder="./media/".$_SESSION['login']."/";
-		$files = scandir($folder);
-		foreach($files as $file)
-			unlink($folder.$file);
-        rmdir("./media/".$_SESSION['login']."/");
-        //mettre a null le UTI_ID dans la table de commentaires
-        $PDO_BDD->exec("UPDATE t_commentaire_com SET UTI_ID = NULL WHERE UTI_ID = ".$_SESSION['id']);
-		//supprimer l'utilisateur
-        $PDO_BDD->exec("DELETE FROM t_utilisateur_uti WHERE UTI_ID = ".$_SESSION['id']);
-		//commentaires anonymes
-		//fermer la session en même temps
-		session_destroy();
-		session_start();
-		header('location: index.php?page=connexion');
-	}
-	if(isset($_POST['modif_profil'])) $page = 2;
-	else if(isset($_POST['new_recette'])) $page = 3;
-	else if(isset($_POST['modif_rct'])){
-		$page = 4;
-		$data['recette_modif']=$PDO_BDD->query("SELECT * 
-											FROM t_recette_rct 
-											WHERE RCT_ID = ".$_POST['rct_id'])->fetchAll(PDO::FETCH_ASSOC);
-	}
-	else $page = 1;
-		
-	if(isset($_POST['send'])){
-		if($_POST['mdp'] == $_POST['sec_mdp']){
-			if($_POST['mdp'] != null){
-				$destination = "./media/".$_SESSION['login'].'/'; // dossier où sera déplacé le fichier
-				$fichier = $_FILES['new_avatar']['tmp_name'];
-				$image = true;
-				if( !is_uploaded_file($fichier))
-					$image = false;
-				if($image == true){
-					if($_FILES['new_avatar']['size'] == 0)
-						echo "<script>alert(\"Ce fichier n'est pas conforme : taille limite dépassé\")</script>";
-					$type = $_FILES['new_avatar']['type'];
-					if(!strstr($type, 'jpg') && !strstr($type, 'jpeg') && !strstr($type, 'png'))
-						echo "<script>alert(\"Ce fichier n'est pas conforme : utiliser les formats .jpg .jpeg .png\")</script>";
-					$newfichier = $_FILES['new_avatar']['name'];
-					if(!move_uploaded_file($fichier, $destination . $newfichier))
-						echo "Impossible de copier le fichier dans $destination";
-					$PDO_BDD->exec("UPDATE t_utilisateur_uti
-					SET UTI_AVATAR = '".addslashes($newfichier)."'
-					WHERE UTI_ID = '".$_SESSION['id']."'");
-					$_SESSION['avatar'] = $newfichier;
-				}
-				$PDO_BDD->exec("UPDATE t_utilisateur_uti
-					SET UTI_MAIL = '".addslashes($_POST['mail'])."',
-						UTI_NOM = '".addslashes($_POST['name'])."',
-						UTI_PRENOM = '".addslashes($_POST['firstname'])."',
-						UTI_PASS = '".addslashes($_POST['mdp'])."'
-					WHERE UTI_ID = '".$_SESSION['id']."'");
-			}
-			else{
-				$destination = "./media/".$_SESSION['login'].'/';
-				$fichier = $_FILES['new_avatar']['tmp_name'];
-				$image = true;
-				if( !is_uploaded_file($fichier))
-					$image = false;
-				if($image == true){
-					if($_FILES['new_avatar']['size'] == 0)
-						echo "<script>alert(\"Ce fichier n'est pas conforme : taille limite dépassé\")</script>";
-					$type = $_FILES['new_avatar']['type'];
-					if(!strstr($type, 'jpg') && !strstr($type, 'jpeg') && !strstr($type, 'png'))
-						echo "<script>alert(\"Ce fichier n'est pas conforme : utiliser les formats .jpg .jpeg .png\")</script>";
-					$newfichier = $_FILES['new_avatar']['name'];
-					if(!move_uploaded_file($fichier, $destination . $newfichier))
-						echo "Impossible de copier le fichier dans $destination";
-					$PDO_BDD->exec("UPDATE t_utilisateur_uti
-					SET UTI_AVATAR = '".addslashes($newfichier)."'
-					WHERE UTI_ID = '".$_SESSION['id']."'");
-					$_SESSION['avatar'] = $newfichier;
-				}
-				$PDO_BDD->exec("UPDATE t_utilisateur_uti
-				SET UTI_MAIL = '".addslashes($_POST['mail'])."',
-					UTI_NOM = '".addslashes($_POST['name'])."',
-					UTI_PRENOM = '".addslashes($_POST['firstname'])."'
-				WHERE UTI_ID = '".$_SESSION['id']."'");
-			}
-			$_SESSION['mail'] = $_POST['mail'];
-			$_SESSION['nom'] = $_POST['name'];
-			$_SESSION['prenom'] = $_POST['firstname'];
-		}	
-		else
-			$page=2;
-	}
-	else if(isset($_POST['exit']))
-		$page=1;
-	if(isset($_POST['new_recette_form'])){
-		if(is_uploaded_file($_FILES['illustration']['tmp_name']))
-			if($_FILES['illustration']['size'] == 0)
-				echo "<script>alert(\"Ce fichier n'est pas conforme : taille limite dépassé\")</script>";
-		$PDO_BDD->exec("INSERT INTO t_recette_rct VALUES('DEFAULT',
-														'".date('Y-m-d H:i:s')."',
-														'".addslashes($_POST['titre'])."',
-														'".addslashes($_POST['desc'])."',
-														'".addslashes($_POST['prep'])."',
-														'".addslashes($_POST['cuisson'])."',
-														'".addslashes($_POST['repos'])."',
-														'".addslashes($_POST['diff'])."',
-														'".addslashes($_POST['cout'])."',
-														'DEFAULT',
-														'".addslashes($_FILES['illustration']['name'])."',
-														'".$_SESSION['id']."',
-														'".addslashes($_POST['pers'])."')");
-		$request=$PDO_BDD->query("SELECT MAX(RCT_ID) FROM t_recette_rct");
-		foreach($request->fetchAll(PDO::FETCH_ASSOC) as $value)
-			foreach ($value as $rct_id)
-				$PDO_BDD->exec("INSERT INTO tj_cat_rct VALUES('".addslashes($_POST['cat'])."','".$rct_id."')");
-	}
-	if(isset($_POST['new_modif_form'])){
-		$destination = "./media/".$_SESSION['login'].'/'; // dossier où sera déplacé le fichier
-		$fichier = $_FILES['illustration']['tmp_name'];
-		$image = true;
-		if( !is_uploaded_file($fichier))
-			$image = false;
-		if($image){
-			if($_FILES['illustration']['size'] == 0)
-				echo "<script>alert(\"Ce fichier n'est pas conforme : taille limite dépassé\")</script>";
-			$type = $_FILES['illustration']['type'];
-			if(!strstr($type, 'jpg') && !strstr($type, 'jpeg') && !strstr($type, 'png'))
-				echo "<script>alert(\"Ce fichier n'est pas conforme : utiliser les formats .jpg .jpeg .png\")</script>";
-			$newfichier = $_FILES['illustration']['name'];
-			if(!move_uploaded_file($fichier, $destination . $newfichier))
-				echo "Impossible de copier le fichier dans $destination";	
-			$PDO_BDD->exec("UPDATE t_recette_rct
-							SET RCT_ILLUSTRATION = '".addslashes($newfichier)."'
-							WHERE RCT_ID = '".$_POST['rct_id_form']."'");
-		}
-		$PDO_BDD->exec("UPDATE t_recette_rct
-						SET RCT_TITRE = '".addslashes($_POST['titre'])."',
-							RCT_DESCRIPTION = '".addslashes($_POST['desc'])."',
-							RCT_TEMPS_PREPARATION = '".addslashes($_POST['prep'])."',
-							RCT_TEMPS_CUISSON = '".addslashes($_POST['cuisson'])."',
-							RCT_TEMPS_REPOS = '".addslashes($_POST['repos'])."',
-							RCT_DIFFICULTE = '".addslashes($_POST['diff'])."',
-							RCT_COUT = '".addslashes($_POST['cout'])."',
-							RCT_NBPERSONNE = '".addslashes($_POST['pers'])."'
-						WHERE RCT_ID = '".addslashes($_POST['rct_id_form'])."'");
-		$PDO_BDD->exec("UPDATE tj_cat_rct
-						SET CAT_ID = ".addslashes($_POST['cat'])."
-						WHERE RCT_ID = ".addslashes($_POST['rct_id_form']));
-	}
-	if(isset($_POST['delete'])){
-		$request = $PDO_BDD->query("SELECT RCT_ILLUSTRATION FROM t_recette_rct WHERE RCT_ID = ".$_POST['rct_id'])->fetchAll(PDO::FETCH_ASSOC);
-		$illust = $PDO_BDD->query("SELECT RCT_ILLUSTRATION FROM t_recette_rct")->fetchAll(PDO::FETCH_ASSOC);
-		$avat = $PDO_BDD->query("SELECT UTI_AVATAR FROM t_utilisateur_uti")->fetchAll(PDO::FETCH_ASSOC);
-		$notin=true;
-		foreach($request as $value)
-			foreach($value as $image){
-				foreach($illust as $value)
-					foreach($value as $ill)
-						if($ill == $image)
-							$notin = false;
-				foreach($avat as $value)
-					foreach($value as $av)
-						if($av == $image)
-							$notin = false;
-			}
-		if($notin){
-			foreach($request as $value)
-				foreach($value as $image)
-					$file="./media/".$_SESSION['login']."/".$image;
-			unlink($file);
-		}
-		$PDO_BDD->exec("DELETE FROM tj_cat_rct WHERE RCT_ID = ".addslashes($_POST['rct_id']));
-		$PDO_BDD->exec("DELETE FROM t_commentaire_com WHERE RCT_ID = ".addslashes($_POST['rct_id']));
-		$PDO_BDD->exec("DELETE FROM t_recette_rct WHERE RCT_ID = ".addslashes($_POST['rct_id']));
-	}
-	$data['recette']=$PDO_BDD->query("SELECT * 
-										FROM t_recette_rct 
-											WHERE UTI_ID = ".$_SESSION['id'])->fetchAll(PDO::FETCH_ASSOC);
-	$data['categorie_rct']=$PDO_BDD->query("SELECT *
-											FROM tj_cat_rct")->fetchAll(PDO::FETCH_ASSOC);
-	$data['categorie_label']=$PDO_BDD->query("SELECT CAT_ID, CAT_LABEL
-											FROM t_categorie_cat")->fetchAll(PDO::FETCH_ASSOC);
-	$data['page_profil'] = $page;
-	
-?>
+{extends '../layout.tpl'}
+
+{block name=main}
+{if $data['page_profil'] == 2}
+	<h2> Votre profil : </h2>
+
+	<form action="" method="post" enctype="multipart/form-data">
+		<label for="new_name">Nom :</label>
+		<input required name="name" id="new_name" type="text" value="{$smarty.session.nom}" size="25" /><br>
+		<label for="new_firstname">Prénom :</label>
+		<input required name="firstname" id="new_firstname" type="text" value="{$smarty.session.prenom}" size="25" /><br>
+		<label for="new_mail">e-Mail :</label>
+		<input required name="mail" id="new_mail" type="text" value="{$smarty.session.mail}" size="50" /><br>
+		<label for="new_mdp">Nouveau mot de passe :</label>
+		<input name="mdp" id="new_mdp" type="password" value="" size=""/><br>
+		<label for="sec_new_mdp">Confirmer le mot de passe :</label>
+		<input name="sec_mdp" id"sec_new_mdp" type="password" value="" size=""/><br>
+		<label for="new_avatar1">Avatar:</label>
+		<input type="hidden" name="MAX_FILE_SIZE" value="512000"/>
+		<input type="file" name="new_avatar" id="new_avatar1"/><br>
+		<input type="submit" name="send" value="Envoyer"/> 
+		<input type="submit" name="exit" value="Annuler"/>
+	</form>
+{else}
+
+	<h2> Votre profil : </h2>
+
+	<div>
+		<p>Login :	{$smarty.session.login} </p>
+		<p>Nom : {$smarty.session.nom} </p>
+		<p>Prénom : {$smarty.session.prenom} </p>
+		<p>e-Mail : {$smarty.session.mail} </p>
+		<img src={"./media/"|cat:$smarty.session.login|cat:"/"|cat:$smarty.session.avatar} height="150" width="150">
+		<form action="" method="post" enctype="multipart/form-data">
+			<input type="submit" name="modif_profil" value="Modifier"/>
+			<input onclick="return(confirm('Etes-vous sûr de vouloir supprimer votre profil?'))" type="submit" name="delete_profil" value="Supprimer le compte"/>
+		</form>
+	</div>
+
+	<section class="gerer_recette">
+		<h2> Vos recettes : </h2>
+		<table>
+			{foreach $data['recette'] as $recette}
+			<tr><td> <a href={"index.php?page=details&idr="|cat:$recette.RCT_ID }>{$recette.RCT_TITRE}</a> </td><td> {$recette.RCT_DESCRIPTION} </td>
+				<td> 
+					{foreach $data['categorie_rct'] as $rct} 
+						{if $rct.RCT_ID == $recette.RCT_ID} 
+							{foreach $data['categorie_label'] as $cat}
+								{if $cat.CAT_ID == $rct.CAT_ID}
+									{$cat.CAT_LABEL}
+								{/if}
+							{/foreach}
+						{/if}
+					{/foreach}
+				</td>
+			</tr>
+			{/foreach}
+		</table>
+		<form action="" method="post" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td>
+						<select name="rct_id">
+							{foreach $data['recette'] as $recette}
+								<option value={$recette.RCT_ID}>{$recette.RCT_TITRE}</option>
+							{/foreach}
+						</select>
+					</td>
+					<td><input type="submit" name="modif_rct" value="Modifier"></input> </td>
+					<td><input type="submit" name="delete" value="Supprimer"></input> </td>
+				</tr>
+			</table>
+		<form>
+
+	</section>
+
+	<section class="ajout_recette">
+		{if $data['page_profil'] == 1}
+			<form action="" method="post" enctype="multipart/form-data"> <input type="submit" name="new_recette" value="Ajouter une recette"/> </form>
+		{elseif $data['page_profil'] == 3}
+			<form action="" method="post" enctype="multipart/form-data">
+				<label for="id_titre">Titre*:</label>
+				<input required type="text" id ="id_titre" name="titre"/><br>
+				<label for="id_desc">Descritpion:</label><br>
+				<textarea name="desc" id="id_desc" rows="10" cols="50" style="resize:none;"></textArea><br>
+				<label for="id_prep">Préparation:</label>
+				<input type="text" id="id_prep" name="prep"/><label>mn</label><br>
+				<label for="id_cuisson">Cuisson:</label>
+				<input type="text" id="id_cuisson" name="cuisson"/><label>mn</label><br>
+				<label for="id_illustration">Illustration:</label>
+				<input type="hidden" name="MAX_FILE_SIZE" value="512000"/>
+				<input type="file" name="illustration" id="id_illustration"/><br>
+				<label for="id_cout">Coût:</label>
+				<select name="cout" id="id_cout">
+					<option value="1">faible</option>
+					<option value="2">moyen</option>
+					<option value="3">élevé</option>
+				</select><br>
+				<label for="id_diff">Difficulté:</label>
+				<select name="diff" id="id_diff">
+					<option value="1">facile</option>
+					<option value="2">moyen</option>
+					<option value="3">difficile</option>
+				</select><br>
+				<label for="id_cat">Catégorie:</label>
+				<select name="cat" id="id_cat">
+					<option value="1">Entrée</option>
+					<option value="2">Plat</option>
+					<option value="3">Dessert</option>
+				</select><br>
+				<label for="id_repos">Repos:</label>
+				<input type="text" id ="id_repos" name="repos"/><br>
+				<label for="id_pers">Nombre de convives:</label>
+				<input type="text" id ="id_pers" name="pers"/><br>
+				<label for="id_recette">La recette*:</label><br>
+				<textarea required name="recette" id="id_recette"  rows="10" cols="50" style="resize:none;"></textarea><br>
+				<input type="submit" name="new_recette_form" value="Ajouter"/>
+				<a href="index.php?page=profil"><button>Annuler</button></a>
+			</form>
+			<p><i> Les champs spécifiés d'un * sont obligatoires. </i></p>
+		{else}
+		 	{foreach $data['recette_modif'] as $rct}
+
+		 		{foreach $data['categorie_rct'] as $cat_rct} 
+					{if $cat_rct.RCT_ID == $rct.RCT_ID} 
+						{foreach $data['categorie_label'] as $cat}
+							{if $cat.CAT_ID == $cat_rct.CAT_ID}
+								{$cat_label = $cat.CAT_LABEL}
+							{/if}
+						{/foreach}
+					{/if}
+				{/foreach}
+
+
+				<form action="" method="post" enctype="multipart/form-data">
+					<input type="text" name="rct_id_form" value="{$rct.RCT_ID}" style="visibility: hidden;"/><br>
+					<label for="id_titre">Titre*:</label>
+					<input required type="text" id ="id_titre" name="titre" value="{$rct.RCT_TITRE}"/><br>
+					<label for="id_desc">Descritpion:</label><br>
+					<textarea name="desc" id="id_desc" rows="10" cols="50" style="resize:none;">{$rct.RCT_DESCRIPTION}</textArea><br>
+					<label for="id_prep">Préparation:</label>
+					<input type="text" id ="id_prep" name="prep" value="{$rct.RCT_TEMPS_PREPARATION}"/><label>mn</label><br>
+					<label for="id_cuisson">Cuisson:</label>
+					<input type="text" id ="id_cuisson" name="cuisson" value="{$rct.RCT_TEMPS_CUISSON}"/><label>mn</label><br>
+					
+					<label for="new_img">Illustration:</label>
+					<input type="hidden" name="MAX_FILE_SIZE" value="512000"/>
+					<input type="file" name="illustration" id="new_img"/><br>
+
+					<label for="id_cout">Coût:</label>
+					<select name="cout" id="id_cout">
+						<option {if $rct.RCT_COUT == "faible"} selected {/if} value="1">faible</option>
+						<option {if $rct.RCT_COUT == "moyen"} selected {/if} value="2">moyen</option>
+						<option {if $rct.RCT_COUT == "eleve"} selected {/if} value="3">élevé</option>
+					</select><br>
+					<label for="id_diff">Difficulté:</label>
+					<select name="diff" id="id_diff">
+						<option {if $rct.RCT_DIFFICULTE == "facile"} selected {/if} value="1">facile</option>
+						<option {if $rct.RCT_DIFFICULTE == "moyen"} selected {/if} value="2">moyen</option>
+						<option {if $rct.RCT_DIFFICULTE == "difficile"} selected {/if} value="3">difficile</option>
+					</select><br>
+					<label for="id_cat">Catégorie:</label>
+					<select name="cat" id="id_cat">
+						<option {if $cat_label == "Entrées"} selected {/if} value="1">Entrée</option>
+						<option {if $cat_label == "Plats"} selected {/if} value="2">Plat</option>
+						<option {if $cat_label == "Desserts"} selected {/if} value="3">Dessert</option>
+					</select><br>
+					<label for="id_repos">Repos:</label>
+					<input type="text" id ="id_repos" name="repos" value="{$rct.RCT_TEMPS_REPOS}"/><br>
+					<label for="id_pers">Nombre de convives:</label>
+					<input type="text" id ="id_pers" name="pers" value="{$rct.RCT_NBPERSONNE}"/><br>
+					<label for="id_recette">La recette*:</label><br>
+					<textarea required name="recette" id="id_recette"  rows="10" cols="50" style="resize:none;"></textarea><br>
+					<input type="submit" name="new_modif_form" value="Confirmer"/>
+					<a href="index.php?page=profil"><button>Annuler</button></a>
+				</form>
+				<p><i> Les champs spécifiés d'un * sont obligatoires. </i></p>
+			{/foreach}
+
+
+
+	{/if}
+	</section>
+{/if}
+
+{/block}
