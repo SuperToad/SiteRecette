@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-01-20 22:20:52
+<?php /* Smarty version 3.1.24, created on 2016-01-21 00:41:06
          compiled from "C:/Users/Gaspard/Documents/Devoirs/UwAmp/www/application/views/modules/recette_detail.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:28833569ffa34c16035_86390272%%*/
+/*%%SmartyHeaderCode:99256a01b12d227e0_77629674%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,7 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0946957d743d68aae52f0a6d2c7089f1d66f3599' => 
     array (
       0 => 'C:/Users/Gaspard/Documents/Devoirs/UwAmp/www/application/views/modules/recette_detail.tpl',
-      1 => 1453319935,
+      1 => 1453333264,
       2 => 'file',
     ),
     'da80556857cd7261a53d0481d09bc7ff96082861' => 
@@ -18,23 +18,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 1453324219,
       2 => 'file',
     ),
-    'bddfbcd0f1af8b889d0aca047cb76c6b7e11c118' => 
+    '664da4084dfd9e43d4245633c5760b12f7bb6220' => 
     array (
-      0 => 'bddfbcd0f1af8b889d0aca047cb76c6b7e11c118',
+      0 => '664da4084dfd9e43d4245633c5760b12f7bb6220',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '28833569ffa34c16035_86390272',
+  'nocache_hash' => '99256a01b12d227e0_77629674',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_569ffa34dcd469_16250462',
+  'unifunc' => 'content_56a01b12ed9392_85303102',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_569ffa34dcd469_16250462')) {
-function content_569ffa34dcd469_16250462 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56a01b12ed9392_85303102')) {
+function content_56a01b12ed9392_85303102 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '28833569ffa34c16035_86390272';
+$_smarty_tpl->properties['nocache_hash'] = '99256a01b12d227e0_77629674';
 echo '<?xml version="1.0" encoding="utf-8"?>';?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml/DTD/xhtml11-strict.dtd">
@@ -56,7 +56,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 		</header>
 		<main>
 			<?php
-$_smarty_tpl->properties['nocache_hash'] = '28833569ffa34c16035_86390272';
+$_smarty_tpl->properties['nocache_hash'] = '99256a01b12d227e0_77629674';
 ?>
 
 	<?php if (isset($_smarty_tpl->tpl_vars['data']->value['rct_req'])) {?>
@@ -162,8 +162,7 @@ $_smarty_tpl->tpl_vars['uticom']->_loop = true;
 $foreach_uticom_Sav = $_smarty_tpl->tpl_vars['uticom'];
 ?>
 							<?php if ($_smarty_tpl->tpl_vars['uticom']->value['UTI_ID'] == $_smarty_tpl->tpl_vars['com']->value['UTI_ID']) {?>
-								<table border="1">
-									<tr><td style="background-color : grey; color : white;">Auteur : <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_NOM'];?>
+									<b>Auteur : <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_NOM'];?>
  <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_PRENOM'];?>
 
 							<?php }?>
@@ -172,15 +171,11 @@ $_smarty_tpl->tpl_vars['uticom'] = $foreach_uticom_Sav;
 }
 ?>
 						- Date : <?php echo $_smarty_tpl->tpl_vars['com']->value['COM_DATE'];?>
- 
-							<input type="text" name="com_id" style="visibility: hidden;" value="<?php echo $_smarty_tpl->tpl_vars['com']->value['COM_ID'];?>
-"/>
-							<input type="submit" name="del_com" value="effacer"/>
-						</td></tr>
-						<tr><td>Commentaire : <?php echo $_smarty_tpl->tpl_vars['com']->value['COM_TEXTE'];?>
-</td></tr>
-						</table>
-					</article><br>
+</b>
+						<input type="submit" name="del_com" value="Effacer"/></br>
+						Commentaire : <?php echo $_smarty_tpl->tpl_vars['com']->value['COM_TEXTE'];?>
+
+					</article>
 				</form>
 				<?php } else { ?>
 					<article>
@@ -197,8 +192,7 @@ $_smarty_tpl->tpl_vars['uticom']->_loop = true;
 $foreach_uticom_Sav = $_smarty_tpl->tpl_vars['uticom'];
 ?>
 								<?php if ($_smarty_tpl->tpl_vars['uticom']->value['UTI_ID'] == $_smarty_tpl->tpl_vars['com']->value['UTI_ID']) {?>
-									<table border="1">
-										<tr><td style="background-color : grey; color : white;">Auteur : <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_NOM'];?>
+									<b>Auteur : <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_NOM'];?>
  <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_PRENOM'];?>
 
 								<?php }?>
@@ -207,16 +201,13 @@ $_smarty_tpl->tpl_vars['uticom'] = $foreach_uticom_Sav;
 }
 ?>
 						<?php } else { ?>
-							<table border="1">
-										<tr><td style="background-color : grey; color : white;">Auteur : Anonyme
+							<b>Auteur : Anonyme
 						<?php }?>
 						- Date : <?php echo $_smarty_tpl->tpl_vars['com']->value['COM_DATE'];?>
+</b></br>
+						Commentaire : <?php echo $_smarty_tpl->tpl_vars['com']->value['COM_TEXTE'];?>
 
-						</td></tr>
-						<tr><td>Commentaire : <?php echo $_smarty_tpl->tpl_vars['com']->value['COM_TEXTE'];?>
-</td></tr>
-						</table>
-					</article><br>				
+					</article>		
 				<?php }?>
 			<?php
 $_smarty_tpl->tpl_vars['com'] = $foreach_com_Sav;
@@ -238,14 +229,14 @@ $_smarty_tpl->tpl_vars['uti_info']->_loop = true;
 $foreach_uti_info_Sav = $_smarty_tpl->tpl_vars['uti_info'];
 ?>
 		<?php if (isset($_SESSION['login'])) {?>
-			<form id="form" action="" method="post">
-				<fieldset>
-					<legend>Nouveau commentaire</legend>
-					<label for="form-newcom">Votre commentaire : </label><br>
-					<textarea required form="form" name="newcom" id="form-newcom" rows="10" cols="50" style="resize:none;"></textarea><br>
-					<input type="submit" name="form-send" value="Envoyer"/>
-				</fieldset>
-			</form>
+			<h3>Nouveau commentaire</h3>
+			<article>
+				<form id="form" action="" method="post">
+					<label for="form-newcom">Votre commentaire : </label></br>
+					<textarea required form="form" name="newcom" id="form-newcom" rows="8" cols="60" style="resize:none;"></textarea></br>
+					<input type="submit" name="form-send" value="Poster"/>
+				</form>
+			<article>
 		<?php }?>
 	<?php
 $_smarty_tpl->tpl_vars['uti_info'] = $foreach_uti_info_Sav;

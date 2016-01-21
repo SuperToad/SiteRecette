@@ -1,7 +1,6 @@
 <?php
 	if(!defined('DB_HOST'))
 	{
-		/*************creation de l'acces bdd***************/
 		define('DB_HOST', 'localhost');
 		define('DB_DATABASE', 'recette');
 		define('DB_USERNAME', 'u_recette');
@@ -37,11 +36,13 @@
 				}
 		if($_POST['new_mdp'] == $_POST['new_sec_mdp'])
 			$mdpok = true;
-		else{
+		else
+		{
 			echo "<script>alert(\"Les mots de passe ne sont pas identiques\")</script>";
 			$data['inscription'] = true;
 		}
-		if($loginok && $mdpok){
+		if($loginok && $mdpok)
+		{
 			mkdir("./media/".$_POST['new_login']."/");
 			$destination = "./media/".$_POST['new_login'].'/'; // dossier où sera déplacé le fichier
 			$fichier = $_FILES['new_new_avatar']['tmp_name'];
@@ -84,7 +85,8 @@
 			foreach ($value as $value2) 
 				if($value2 == $login)
 					$login_ok = true;
-		if($login_ok){
+		if($login_ok)
+		{
 			$request_pwd=$PDO_BDD->query("SELECT UTI_PASS
 				from t_utilisateur_uti where UTI_LOGIN = '".$login."'");
 			foreach ($request_pwd->fetchAll(PDO::FETCH_ASSOC) as $value)
@@ -110,8 +112,8 @@
 			}
 			header('location: index.php?page=');
 		}
-		else{
-		}
+		// Gerer le cas contraire
+
 	}
 
 	if(isset($_REQUEST['deco']))
